@@ -13,7 +13,6 @@
   "bin": {
     "dockerpkg": "./bin/dockerpkg.js"
   },
-  "keywords": [],
   "author": "Bram Borggreve @beeman_nl <borggreve@gmail.com>",
   "license": "MIT"
 }
