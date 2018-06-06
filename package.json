@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Run node apps in small docker containers using zeit/pkg",
   "scripts": {
-    "docker-build-builder": "docker build -t dockerpkg/builder:latest ./builder",
-    "docker-push-builder": "docker push dockerpkg/builder:latest",
-    "docker-run-builder": "docker run -it --name dockerpkg-builder -v $(pwd):/app/ -v $(pwd)/.pkg-cache:/root/.pkg-cache --rm dockerpkg/builder:latest",
-    "docker-build-runner": "docker build -t dockerpkg/runner:latest ./runner",
-    "docker-push-runner": "docker push dockerpkg/runner:latest",
-    "docker-run-runner": "docker run -it --name dockerpkg-runner -v $(pwd):/app/ -v $(pwd)/.pkg-cache:/root/.pkg-cache --rm dockerpkg/runner:latest"
+    "docker-build-builder": "docker build -t dockerpkg/builder:$npm_package_version ./builder",
+    "docker-push-builder": "docker push dockerpkg/builder:$npm_package_version",
+    "docker-run-builder": "docker run -it --name dockerpkg-builder -v $(pwd):/app/ -v $(pwd)/.pkg-cache:/root/.pkg-cache --rm dockerpkg/builder:$npm_package_version",
+    "docker-build-runner": "docker build -t dockerpkg/runner:$npm_package_version ./runner",
+    "docker-push-runner": "docker push dockerpkg/runner:$npm_package_version",
+    "docker-run-runner": "docker run -it --name dockerpkg-runner -v $(pwd):/app/ -v $(pwd)/.pkg-cache:/root/.pkg-cache --rm dockerpkg/runner:$npm_package_version"
   },
   "bin": {
     "dockerpkg": "./bin/dockerpkg.js"

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-const { spawnSync } = require('child_process');
+const { spawnSync } = require('child_process')
 
 const appName = '📦  dockerpkg'
 
-const instanceName = 'dockerpkg-builder';
-const imageName = 'dockerpkg/builder:latest';
-const workingDir = process.cwd();
+const instanceName = 'dockerpkg-builder'
+const imageName = 'dockerpkg/builder:latest'
+const workingDir = process.cwd()
 
-const command = 'docker';
+const command = 'docker'
 const params = [
   'run',
   '--rm',
@@ -16,11 +16,11 @@ const params = [
   '-v', `${workingDir}/.pkg-cache/:/root/.pkg-cache`,
   '-t',
   `${imageName}`,
-];
+]
 
 console.log(`${appName}: Building app.bin in ${workingDir}`)
 
-const cmd = spawnSync(command, params);
+const cmd = spawnSync(command, params)
 
 if (cmd.stderr.toString().length) {
   console.error(`${appName}: An error occurred: ${cmd.stderr.toString()}`)
