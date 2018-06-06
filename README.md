@@ -17,13 +17,13 @@ building and running the container and it provides a simple helper command to ru
 
 ## dockerpkg/builder
 
-The builder image is based on `node:7.9-alpine` and it runs the `pkg` command with some params in the mounted directory.
+The builder image is based on `mhart/alpine-node:10.3.0` and it runs the `pkg` command with some params in the mounted directory.
 
 The result is a generated binary called `app.bin` in the mounted directory (generally this is the dir of you project).
 
 ## dockerpkg/runner
 
-The runner images is based on `alpine:3.5` and it is made to run the generated `app.bin` from the `/app` directory.
+The runner images is based on `alpine:3.7` and it is made to run the generated `app.bin` from the `/app` directory.
 
 ## dockerpkg cli tool
 
